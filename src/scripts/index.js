@@ -51,24 +51,6 @@ function createCardSugestao(suggestUsers){
   return contanierSugestoes
 }
 
-/*
-<div class="contanier_sugestoes">
-
-<div class="contanier_sugestoes_perfil">
-  <img class="image_perfil" src="src/assets/img/user3.svg">
-  
-  <div class="nome_perfil">
-    <h2>Carlos Lima</h2>
-    <p>UX e UI Design</p>
-  </div>
-</div>
-
-<div class="tag_seguindo">
-    <p>Seguindo</p>
-</div>
-</div>
-*/
-
 // RENDER POSTS
 
 function renderPosts(posts){
@@ -82,7 +64,6 @@ let card_post = createCardPost(post)
 
 
 contanierPosts.appendChild(card_post)
-
 
 })
 }
@@ -135,33 +116,6 @@ return cardPostli
 }
 
 
-/*<ul class="contanier_posts">
-        <li class="card_post">
-          <div class="contanier_perfil">
-        
-            <img class="image_perfil" src="src/assets/img/user1.svg">
-            
-            <div class="nome_perfil">
-            <h2>Samuel Leão</h2>
-            <p>Front end Engineer</p>
-            </div>
-    
-          </div>
-          
-          <div class="conteudo_post">
-            <h2>Como criar um interface simples e agradável ultilizando boas práticas de design</h2>
-            <p>Hoje vamos conversar sobre como criar uma interface agradável mesmo sem ter um design pronto feito por um profissional de UI design.</p>
-          </div>
-          
-          <div class="button_post">
-          <button>Abrir Post</button>
-          <img src="src/assets/img/Vector.svg" alt="like"> <p>0</p>
-          </div>
-
-        </li>
-      </ul>
-*/
-
 // RENDER MODAL 
 
 function renderModal(array){
@@ -170,8 +124,7 @@ function renderModal(array){
 
     buttons.forEach(button =>{
         button.addEventListener('click', () =>{
-        //console.log(button.dataset.postId)
-
+        
         const modalContent = createModal(button.dataset.postId,array)
 
         modal.innerHTML = ''
@@ -239,36 +192,12 @@ function closeModal(){
 
 }
 
-/*
-<div class="modal_camada">
-
-<button class="close_modal">X</button>
-
-<div class="contanier_perfil">
-   
- <img class="image_perfil" src="src/assets/img/user1.svg">
- 
- <div class="nome_perfil">
- <h2>Samuel Leão</h2>
- <p>Front end Engineer</p>
- </div>
-
-</div>
-
-<div class="conteudo_post">
- <h2>Como criar um interface simples e agradável ultilizando boas práticas de design</h2>
- <p>Hoje vamos conversar sobre como criar uma interface agradável mesmo sem ter um design pronto feito por um profissional de UI design.</p>
-</div>
-
-</div>
-*/
-
 
 //REGISTRO DE POST
 
 function registroPost(array){
     const inputs = document.querySelectorAll('.criando_posts')
-    console.log(inputs)
+    
 
     const novoPost = {}
     let emptyInput = 0
@@ -280,17 +209,12 @@ function registroPost(array){
 
     novoPost[input.name] = input.value
     })
-    console.log(novoPost)
+    
     novoPost.id = array.length + 1
     novoPost.user = "Samuel Leão"
     novoPost.stack = 'Front end Engineer'
     novoPost.img = "src/assets/img/user1.svg"
     novoPost.likes = 0
-
-    /* user: "Samuel Persuhn",
-    stack: "Front end Engineer",
-    img: "./src/assets/img/user2.svg",
-    likes: 25*/ 
 
     if(emptyInput>0){
         alert('Preencha os campos necessarios')
